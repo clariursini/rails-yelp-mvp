@@ -4,8 +4,7 @@
   <ul>
     <% @restaurants.each do |r| %>
   <li>
-      <%= r.name %>
-      <%= link_to "Show Details", restaurant_path(r) %>
+      <%= link_to r.name, restaurant_path(r) %>
       <% end %>
   </li>
   </ul>
