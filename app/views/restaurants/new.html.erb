@@ -1,0 +1,13 @@
+<h1>Crea un Restaurant</h1>
+
+<div class="form">
+  <%= simple_form_for @restaurant do |r| %>
+    <%= r.input :name %>
+    <%= r.input :address %>
+    <%= r.input :phone_number %>
+    <%= r.input :category, collection: Restaurant::CATEGORIES, prompt: :translate %>
+    <%= r.button :submit, class: "btn btn-primary" %>
+    <% end %>
+</div><br>
+
+<%= link_to "Back to list", restaurants_path %>

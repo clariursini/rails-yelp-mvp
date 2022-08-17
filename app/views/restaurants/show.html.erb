@@ -1,0 +1,23 @@
+<h1><%= @restaurant.name %> Details</h1><br>
+
+<div class="restaurant-details">
+  <ul>
+    <li><strong>Address: </strong><%= @restaurant.address %></li>
+    <li><strong>Phone: </strong><%= @restaurant.phone_number %></li>
+    <li><strong>Category: </strong><%= @restaurant.category.capitalize %></li>
+  </ul>
+</div>
+
+<div class="restaurant-reviews">
+  <p><strong>Reviews</strong></p>
+  <ul class="list-group">
+    <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item">
+      <p><strong>Rating: </strong><%= review.rating %></p>
+      <p><strong>Comment: </strong><%= review.content %></p>
+  </ul>
+  <% end %>
+</div><br>
+
+<%= link_to "Add a new review", new_restaurant_review_path(@restaurant) %> <br>
+<%= link_to "Back to list", restaurants_path %>
